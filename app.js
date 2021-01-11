@@ -6,7 +6,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
 app.get("/", function(req, res) {
-res.sendFile(__dirname + "/signup.html");
+res.sendFile(__dirname + "/signUp.html");
 });
 
 app.post ("/", function(req, res) {
@@ -50,7 +50,6 @@ request.end();
 
 app.post ("/", function(req, res) {
           res.redirect("/")
-   
   });
 
 
