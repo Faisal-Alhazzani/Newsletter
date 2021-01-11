@@ -29,15 +29,16 @@ app.post("/", function (req, res) {
     };
     // JSON parsing
     const jsonData = JSON.stringify(data);
+    const apiKey = ""
     // API endpoint/path/list id
     const url = "https://us7.api.mailchimp.com/3.0/lists/49e1cb7f14 ";
     const options = {
         method: "POST",
-        auth: "bla-bla-bla:28859034fba8e83820ed432a69a840c7-us7"
+        auth: "bla-bla-bla:"+ apiKey
     };
     // API POST call
     const request = https.request(url, options, function (response) {
-        console.log("Status Cooode: " + response.statusCode)
+        console.log("Status Code: " + response.statusCode)
         if (response.statusCode === 200) {
             res.sendFile(__dirname + "/success.html")
         } else {
@@ -61,7 +62,4 @@ app.listen(process.env.PORT || 3000, function () {
     console.log("Server is running on port 3000");
 });
 
-// LIST id
-// 49e1cb7f14  
-// APP ID
-// 28859034fba8e83820ed432a69a840c7-us7
+
